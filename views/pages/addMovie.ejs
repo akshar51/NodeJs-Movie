@@ -88,47 +88,88 @@
                     </div>
 
                     <!-- language -->
-                    
+
                     <div className="mb-3">
-                  <label className='form-label me-2' htmlFor="Gender">Language : </label>
-
-                    <div className="form-check form-check-inline">
-                      <input className="form-check-input" 
-                      type="checkbox" 
-                      name="language" 
-                      id="hindi" 
-                      value="Hindi"/>
-                      <label className="form-check-label" htmlFor="hindi">
-                        Hindi
+                      <label className="form-label me-2" htmlFor="Gender"
+                        >Language :
                       </label>
+
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          name="language"
+                          id="hindi"
+                          value="Hindi"
+                        />
+                        <label className="form-check-label" htmlFor="hindi">
+                          Hindi
+                        </label>
+                      </div>
+
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          name="language"
+                          id="tamil"
+                          value="Tamil"
+                        />
+                        <label className="form-check-label" htmlFor="tamil">
+                          Tamil
+                        </label>
+                      </div>
+
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          name="language"
+                          id="English"
+                          value="English"
+                        />
+                        <label className="form-check-label" htmlFor="english">
+                          English
+                        </label>
+                      </div>
                     </div>
 
-                    <div className="form-check form-check-inline">
-                      <input className="form-check-input" 
-                      type="checkbox" 
-                      name="language" 
-                      id="tamil" 
-                      value="Tamil"/>
-                      <label className="form-check-label" htmlFor="tamil">
-                        Tamil
-                      </label>
-                    </div>
-
-                    <div className="form-check form-check-inline">
-                      <input className="form-check-input" 
-                      type="checkbox" 
-                      name="language" 
-                      id="English" 
-                      value="English"/>
-                      <label className="form-check-label" htmlFor="english">
-                        English
-                      </label>
-                    </div>
-                    
+                    <!-- Age -->
+                    <!-- <div class="form-group mb-0 ">
+                <label
+                  for="age"
+                  class=""
+                  >Age Limit :</label
+                >
+                <div class="col-sm-9 border-input">
+                  <select name="age" id="age" class="form-control border-input">
+                <option value="" selected disabled>--Select-Age-Limit</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Appliance">Appliance</option>
+              </select>
                 </div>
+                
+              </div> -->
 
-
-
+                    <div class="form-group">
+                      <label>Age Limit : </label>
+                      <select
+                        name="age"
+                        id="age"
+                        class="form-control border-input"
+                      >
+                        <option value="" selected disabled>
+                          --Select-Age-Limit
+                        </option>
+                        <option value="U">U(Universal)</option>
+                        <option value="UA">UA(Parental Guidance)</option>
+                        <option value="A">A(Adults Only)</option>
+                        <option value="UA 7+">UA 7+</option>
+                        <option value="UA 13+">UA 13+</option>
+                        <option value="UA 16+">UA 16+</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <div class="text-center">
