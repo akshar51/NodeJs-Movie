@@ -154,3 +154,8 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+$('#m_date').datepicker({
+    format: "dd M, yyyy",
+    autoclose: true,
+    todayHighlight: true
+});

@@ -196,6 +196,7 @@ button:focus {
   text-align: center; }
 
 .fa-base {
+  display: none !important;
   font-size: 1.25em !important; }
 
 .margin-top {
