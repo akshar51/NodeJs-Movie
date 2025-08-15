@@ -5,3 +5,7 @@ module.exports.home = (req,res)=>{
 module.exports.viewAddMovie = (req,res)=>{
     res.render('pages/addMovie')
 }
+
+module.exports.viewListMovie = (req,res)=>{
+    res.render('pages/listMovie')
+}
