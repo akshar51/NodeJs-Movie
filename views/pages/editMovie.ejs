@@ -1,0 +1,178 @@
+<%- include('../partials/header.ejs')%>
+
+<div class="main-panel">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar bar1"></span>
+          <span class="icon-bar bar2"></span>
+          <span class="icon-bar bar3"></span>
+        </button>
+        <a class="navbar-brand" href="#">Edit Movie </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-7">
+          <div class="card">
+            <div class="header">
+              <h4 class="title fw-bold">Edit Movie :</h4>
+            </div>
+            <div class="content">
+              <form method="post" action="/update/<%= movie._id %>" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-md-6">
+                    <!-- image -->
+                    <div class="mb-4">
+                      <label for="formFile" class="form-label"
+                        >Movie Poster :
+                      </label>
+                      <input
+                        class="form-control border-input"
+                        type="file"
+                        id="image"
+                        name="image"
+                      />
+                    </div>
+
+                    <!-- name -->
+                    <div class="form-group">
+                      <label>Movie Name : </label>
+                      <input
+                        type="text"
+                        class="form-control border-input"
+                        placeholder="Enter movie name"
+                        name="m_name"
+                        value="<%= movie.m_name %>"
+                      />
+                    </div>
+
+                    <!-- time -->
+                    <div class="form-group">
+                      <label>Movie Time : </label>
+                      <input
+                        type="time"
+                        class="form-control border-input"
+                        placeholder="Enter time"
+                        name="m_time"
+                        value="<%= movie.m_time %>"
+                      />
+                    </div>
+
+                    <!-- date -->
+                    <div class="form-group">
+                      <label>Movie Date : </label>
+                      <input
+                        type="text"
+                        class="form-control border-input"
+                        placeholder="Enter release date"
+                        id="m_date"
+                        name="m_date"
+                        value="<%= movie.m_date %>"
+                      />
+                    </div>
+
+                    <!-- description -->
+                    <div class="form-group">
+                      <label>Movie Description : </label>
+                      <textarea
+                        name="description"
+                        id="description"
+                        class="form-control border-input"
+                      ><%= movie.description %></textarea>
+                    </div>
+
+                    <!-- language -->
+                    <div className="mb-3">
+                      <label className="form-label me-2" htmlFor="language"
+                        >Language :
+                      </label>
+
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          name="language"
+                          id="hindi"
+                          value="Hindi"
+                          <%= movie.language && movie.language.includes('Hindi') ? 'checked' : '' %>
+                        />
+                        <label className="form-check-label" htmlFor="hindi">
+                          Hindi
+                        </label>
+                      </div>
+
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          name="language"
+                          id="tamil"
+                          value="Tamil"
+                          <%= movie.language && movie.language.includes('Tamil') ? 'checked' : '' %>
+                        />
+                        <label className="form-check-label" htmlFor="tamil">
+                          Tamil
+                        </label>
+                      </div>
+
+                      <div className="form-check form-check-inline">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          name="language"
+                          id="English"
+                          value="English"
+                          <%= movie.language && movie.language.includes('English') ? 'checked' : '' %>
+                        />
+                        <label className="form-check-label" htmlFor="english">
+                          English
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Age -->
+                    <div class="form-group">
+                      <label>Age Limit : </label>
+                      <select
+                        name="age"
+                        id="age"
+                        class="form-control border-input"
+                      >
+                        <option value="" selected disabled>
+                          --Select-Age-Limit
+                        </option>
+                        <option value="U" <%= movie.age === 'U' ? 'selected' : '' %> >U(Universal)</option>
+                        <option value="UA" <%= movie.age === 'UA' ? 'selected' : '' %> >UA(Parental Guidance)</option>
+                        <option value="A" <%= movie.age === 'A' ? 'selected' : '' %> >A(Adults Only)</option>
+                        <option value="UA 7+" <%= movie.age === 'UA 7+' ? 'selected' : '' %> >UA 7+</option>
+                        <option value="UA 13+" <%= movie.age === 'UA 13+' ? 'selected' : '' %> >UA 13+</option>
+                        <option value="UA 16+" <%= movie.age === 'UA 16+' ? 'selected' : '' %> >UA 16+</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-warning btn-fill btn-wd text-black">
+                    Update movie
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../partials/footer.ejs')%>
+</div>

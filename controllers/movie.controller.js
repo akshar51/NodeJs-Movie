@@ -43,3 +43,26 @@ module.exports.deleteMovie =async (req,res)=>{
         res.redirect(req.get("Referrer" || "/"))
     }
 }
+
+module.exports.editMovie = async(req,res)=>{
+    try {
+        const {id} = req.params;
+        let movie = await Movie.findById(id)
+        res.render('pages/editMovie',{movie})
+    } catch (error) {
+        console.log(error);
+        res.render('pages/editMovie',{movie:{}})
+    }
+}
+
+module.exports.updateMovie = async(req,res)=>{
+    try {
+        const { id } = req.params
+        await Movie.findByIdAndUpdate(id,req.body,{new : true})
+        res.redirect('/list')
+    } catch (error) {
+        console.log(error);
+        res.redirect('/list')
+    }
+}
+

@@ -1,13 +1,24 @@
 const {Router} = require('express');
-const { viewAddMovie, home, viewListMovie, addMovie, deleteMovie } = require('../controllers/movie.controller');
+const { viewAddMovie, home, viewListMovie, addMovie, deleteMovie, editMovie, updateMovie } = require('../controllers/movie.controller');
 const image = require('../middleware/image');
 
 const movieRouter = Router();
 
+// Default page
 movieRouter.get('/',home)
+
+//Rendering pages
 movieRouter.get('/addMovie',viewAddMovie)
 movieRouter.get('/list',viewListMovie)
-movieRouter.post('/create',image,addMovie);
+
+//Delete
 movieRouter.get('/delete/:id',deleteMovie)
+
+//Updating/Edit
+movieRouter.get('/edit/:id',editMovie)
+movieRouter.post('/update/:id',image,updateMovie)
+
+//Create
+movieRouter.post('/create',image,addMovie);
 
 module.exports = movieRouter
