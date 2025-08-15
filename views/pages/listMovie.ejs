@@ -35,54 +35,36 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <th>Sr No.</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
+                                    	<th>Poster</th>
+                                        <th>Name</th>
+                                    	<th>Language</th>
+                                    	<th>Description</th>
+                                    	<th>Time</th>
+                                        <th>Release Date</th>
+                                        <th>Age Limit</th>
+                                        <th>Action</th>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
+                                        <% movie.map((val,idx)=>{ 
+                                            const {image,m_name,m_time,m_date,description,age,language,id} = val;
+                                        %>
+                                            <tr>
+                                                <td><%= idx+1 %></td>
+                                                <td>
+                                                    <img src='../<%= image %>' alt="image" width="70" height="70">
+                                                </td>
+                                                <td><%= m_name%></td>
+                                                <td><%= language %></td>
+                                                <td><%= description %></td>
+                                                <td><%= m_time %></td>
+                                                <td><%= m_date %></td>
+                                                <td><%= age %></td>
+                                                <td>
+                                                    <a href="" class="btn btn-warning me-1">Edit</a>
+                                                    <a href="/delete/<%= id %>" class="btn btn-danger me-1">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <% }) %>
                                     </tbody>
                                 </table>
 

@@ -1,3 +1,8 @@
+const { default: mongoose } = require("mongoose")
+const Movie = require("../models/movieSchema")
+const fs = require('fs');
+
+
 module.exports.home = (req,res)=>{
     res.render('pages/index')
 }
@@ -6,6 +11,35 @@ module.exports.viewAddMovie = (req,res)=>{
     res.render('pages/addMovie')
 }
 
-module.exports.viewListMovie = (req,res)=>{
-    res.render('pages/listMovie')
+module.exports.viewListMovie = async (req,res)=>{
+    try {
+        let movie = await Movie.find({})
+        res.render('pages/listMovie',{movie})
+    } catch (error) {
+        console.log(error)
+        res.render('pages/listMovie',{movie:[]})
+    }
+}
+
+module.exports.addMovie = async(req,res)=>{
+    try {
+        let image = req.file.path
+        await Movie.create({...req.body,image})
+        res.redirect(req.get('Referrer' || '/'))
+    } catch (error) {
+        console.log(error)
+        res.redirect(req.get('Referrer' || '/'))
+    }
+}
+
+module.exports.deleteMovie =async (req,res)=>{
+    try {
+        const { id } = req.params
+        let movie = await Movie.findByIdAndDelete(id)
+        fs.unlinkSync(movie.image)
+        res.redirect(req.get("Referrer" || "/"))
+    } catch (error) {
+        console.log(error)
+        res.redirect(req.get("Referrer" || "/"))
+    }
 }
