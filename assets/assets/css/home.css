@@ -32,7 +32,14 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
-.movie-card {
-  background-color: aqua;
+
+
+/* ---------- Card  ---------- */
+.movie-card-section{
   height: 100vh;
+  padding-top: 5vw;
+}
+
+.card{
+  background-color: rgb(37, 37, 37) !important;
 }
