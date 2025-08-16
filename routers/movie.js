@@ -5,8 +5,8 @@ const image = require('../middleware/image');
 const movieRouter = Router();
 
 // Default page
-movieRouter.get('/',home)
-
+movieRouter.get('/admin',home)
+movieRouter.get('/',mainPage)
 //Rendering pages
 movieRouter.get('/addMovie',viewAddMovie)
 movieRouter.get('/list',viewListMovie)
