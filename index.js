@@ -10,6 +10,7 @@ app.use(express.static('assets'))
 app.use('/uploads',express.static((__dirname,'uploads')))
 
 app.use('/',require('./routers/movie'))
+app.use('/',require('./routers/trailers'))
 
 app.listen(port, (err) => {
     if (!err) {

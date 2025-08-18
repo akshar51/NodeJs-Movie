@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose")
 const Movie = require("../models/movieSchema")
 const fs = require('fs');
+const path = require('path')
 
 
 module.exports.home = (req,res)=>{
@@ -27,7 +28,7 @@ module.exports.viewListMovie = async (req,res)=>{
 
 module.exports.addMovie = async(req,res)=>{
     try {
-        let image = req.file.path
+        let image = req.file ? req.file.path : null;
         await Movie.create({...req.body,image})
         res.redirect(req.get('Referrer' || '/'))
     } catch (error) {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>BookMyTicket</title>
     <link rel="stylesheet" href="/assets/css/home.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+
+    <!-- Hero-section -->
     <section class="hero-section">
       <div class="overlay h-100">
         <div class="container h-100">
@@ -57,7 +59,7 @@
             <h5 class="py-1">Action | Adventure | 2025 | 2h 8m</h5>
             <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore saepe molestiae impedit cumque accusamus quasi amet aut, perferendis aperiam quod nulla exercitationem vero cum minus omnis repudiandae unde porro voluptatibus?</p>
             <div class="exl-btn">
-                <a href="" class="btn btn-danger fw-medium rounded-pill text-white px-4 py-2">Explore Movie <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="" class="btn btn-danger fw-medium rounded-pill text-white px-4 py-2">Explore Movies <i class="fa-solid fa-arrow-right ms-1"></i></a>
             </div>
         </div>
         </div>
@@ -75,9 +77,9 @@
               <i class="fa-solid fa-arrow-right ms-1"></i>
             </a>
           </div>
-          <div class="movie-card mt-5">
-            <div class="card" style="width: 18rem;">
-              <img src="/assets/img/coolie.jpg" class="card-img-top" alt="...">
+          <div class="movie-card mt-5 d-flex gap-5 flex-wrap">
+            <div class="card" style="width: 17rem;">
+              <img src="/assets/img/coolie.jpg" class="card-img-top p-2 rounded-4" alt="...">
               <div class="card-body text-white">
                 <h5 class="card-title">Coolie</h5>
                 <p class="card-text">
@@ -85,13 +87,109 @@
                   <span>Action | Thriller</span>
                   <span>| 2h 8m</span>
                 </p>
-                <a href="#" class="btn btn-danger rounded-pill px-">Buy Ticket</a>
+                <a href="#" class="btn btn-danger rounded-pill">Buy Ticket</a>
               </div>
             </div>
+          </div>
+          <div class="movie-button text-center mt-4">
+            <a href="" class="btn btn-danger fw-medium">Show More</a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Trailers -->
+     <div class="container mt-5">
+  <h2 class="text-white">Trailers</h2>
+
+  <% const trailers = [
+    {
+      title: "Ironheart | Official Trailer",
+      description: "Marvel Television's Ironheart trailer, streaming soon on Disney+.",
+      youtubeUrl: "https://www.youtube.com/embed/qw8kG4Exqvk",
+      thumbnail: "https://img.youtube.com/vi/qw8kG4Exqvk/hqdefault.jpg"
+    },
+    {
+      title: "Thunderbolts | Final Trailer",
+      description: "The Thunderbolts assemble for their final mission.",
+      youtubeUrl: "https://www.youtube.com/embed/abcd1234xyz",
+      thumbnail: "https://img.youtube.com/vi/abcd1234xyz/hqdefault.jpg"
+    },
+    {
+      title: "Fantastic Four | Official Trailer",
+      description: "The Fantastic Four reboot brings Marvel's first family to life.",
+      youtubeUrl: "https://www.youtube.com/embed/efgh5678uvw",
+      thumbnail: "https://img.youtube.com/vi/efgh5678uvw/hqdefault.jpg"
+    },
+    {
+      title: "What If...? | Official Trailer",
+      description: "What If the multiverse had different stories to tell? Streaming on Disney+.",
+      youtubeUrl: "https://www.youtube.com/embed/ijkl91011mno",
+      thumbnail: "https://img.youtube.com/vi/ijkl91011mno/hqdefault.jpg"
+    }
+  ]; %>
+
+  <!-- Featured trailer -->
+  <% if (trailers.length > 0) { %>
+    <div class="mb-4">
+      <iframe width="100%" height="480"
+        src="<%= trailers[1].youtubeUrl %>"
+        title="<%= trailers[1].title %>" frameborder="0"
+        allowfullscreen>
+      </iframe>
+      <h3 class="text-white mt-2"><%= trailers[1].title %></h3>
+      <p class="text-secondary"><%= trailers[1].description %></p>
+    </div>
+  <% } %>
+
+  <!-- Thumbnails -->
+  <div class="d-flex gap-3 flex-wrap">
+    <% trailers.forEach((trailer, i) => { if (i > 0) { %>
+      <div class="card bg-dark text-white" style="width: 18rem;">
+        <img src="<%= trailer.thumbnail %>" class="card-img-top" alt="<%= trailer.title %>">
+        <div class="card-body">
+          <h5><%= trailer.title %></h5>
+          <a href="<%= trailer.youtubeUrl %>" target="_blank" class="btn btn-danger">Watch</a>
+        </div>
+      </div>
+    <% } }) %>
+  </div>
+</div>
+
+    <!-- Footer -->
+     <footer class="pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="f-content text-white">
+              <span class="text-danger fs-4 fw-medium">Book</span><span class="fs-4 fw-medium">MyTicket</span>
+              <p class="w-75 pe-5 mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, sequi voluptas possimus ea voluptatem ex voluptate, natus voluptatum aliquam odio sint fuga exercitationem, sapiente harum dignissimos repudiandae vel dolores explicabo?</p>
+              <img src="/assets/img/googlePlay.svg" alt="">
+              <img src="/assets/img/appStore.svg" alt="">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="f-contact d-flex justify-content-between">
+                <div class="f-about text-white">
+                  <h5 class="mb-2">Company</h5>
+                  <a href="" class="text-decoration-none d-block text-white-50">Home</a>
+                  <a href="" class="text-decoration-none d-block text-white-50">About Us</a>
+                  <a href="" class="text-decoration-none d-block text-white-50">Contact Us</a>
+                  <a href="" class="text-decoration-none d-block text-white-50">Privacy policy</a>
+                </div>
+                <div class="f-info text-white">
+                  <h5>Get in touch</h5>
+                  <p class="mb-0 text-white-50">+1-234-567-890</p>
+                  <p class="mb-0 text-white-50">contact@gmail.com</p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright text-white text-center border-top mt-3">
+          <p class="py-3 mb-0">Copyright 2025 © GreatStack. All Right Reserved.</p>
+        </div>
+      </div>
+     </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
