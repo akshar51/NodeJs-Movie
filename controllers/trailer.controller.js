@@ -1,5 +1,6 @@
 const { thumbnail } = require("../middleware/image");
 const Trailer = require("../models/trailerSchema")
+const fs = require('fs');
 
 module.exports.addTrailer = async (req,res)=>{
     try {
@@ -25,7 +26,8 @@ module.exports.createTrailer = async (req,res)=>{
 module.exports.deleteTrailer = async(req,res)=>{
     try {
         let {id} = req.params
-        await Trailer.findByIdAndDelete(id)
+        let trailer = await Trailer.findByIdAndDelete(id)
+        fs.unlinkSync(trailer.thumbnail)
         res.redirect("/trailer")        
     } catch (error) {
         console.log(error);
