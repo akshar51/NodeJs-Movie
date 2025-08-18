@@ -36,7 +36,7 @@ header {
 
 /* ---------- Card  ---------- */
 .movie-card-section{
-  height: 100vh;
+  height: auto;
   padding-top: 5vw;
 }
 
@@ -58,4 +58,9 @@ header {
   height: 22vw;
   object-fit: fill;
   width: 100%;
+}
+
+/* -------- Trailer ---------- */
+.trailer-card{
+  padding-block: 3rem;
 }

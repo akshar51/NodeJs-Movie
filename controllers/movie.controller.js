@@ -1,15 +1,23 @@
 const { default: mongoose } = require("mongoose")
 const Movie = require("../models/movieSchema")
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const Trailer = require("../models/trailerSchema");
 
 
 module.exports.home = (req,res)=>{
     res.render('pages/index')
 }
 
-mainPage = (req,res)=>{
-    res.render('pages/home')
+module.exports.mainPage = async (req,res)=>{
+    try {
+        let movie = await Movie.find({})
+        let trailer = await Trailer.find({})
+        res.render('pages/home',{movie,trailer})
+    } catch (error) {
+        console.log(error)
+        res.render('pages/home',{movie : [],trailer : []})
+    }
 }
 
 module.exports.viewAddMovie = (req,res)=>{

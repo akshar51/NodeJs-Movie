@@ -9,7 +9,6 @@ module.exports.createTrailer = async (req,res)=>{
     try {
         let thumbnail = req.file ? req.file.path : null;
         let trailer = await Trailer.create({...req.body,thumbnail})
-        console.log(trailer)
         res.redirect(req.get('Referrer' || '/'))
     } catch (error) {
         console.log(error)

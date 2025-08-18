@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { viewAddMovie, home, viewListMovie, addMovie, deleteMovie, editMovie, updateMovie } = require('../controllers/movie.controller');
+const { viewAddMovie, home, viewListMovie, addMovie, deleteMovie, editMovie, updateMovie, mainPage } = require('../controllers/movie.controller');
 const {image} = require('../middleware/image');
 
 const movieRouter = Router();
