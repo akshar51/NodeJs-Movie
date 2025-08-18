@@ -27,7 +27,15 @@ module.exports.deleteTrailer = async(req,res)=>{
     try {
         let {id} = req.params
         let trailer = await Trailer.findByIdAndDelete(id)
-        fs.unlinkSync(trailer.thumbnail)
+
+        if (trailer && trailer.thumbnail) {
+            try {
+                fs.unlinkSync(trailer.thumbnail);
+            } catch (err) {
+                console.log("File already deleted or not found:", err.message);
+            }
+        }
+        
         res.redirect("/trailer")        
     } catch (error) {
         console.log(error);
