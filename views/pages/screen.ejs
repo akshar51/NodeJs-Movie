@@ -66,7 +66,67 @@
                     <div class="screen-card d-flex flex-column align-items-center text-white">
                         <h4 class="mb-3">Select your seat</h4>
                         <img src="/assets/img/screen.svg" alt="">
-                        <h6>SCREEN SIDE</h6>
+                        <h6 class="text-secondary">SCREEN SIDE</h6>
+                    </div>
+                    <div class="seats text-warning text-center mt-4">
+                        <div class="seat" data-seat="A1">A1</div>
+                        <div class="seat" data-seat="A2">A2</div>
+                        <div class="seat" data-seat="A3">A3</div>
+                        <div class="seat" data-seat="A4">A4</div>
+                        <div class="seat" data-seat="A5">A5</div>
+                        <div class="seat" data-seat="A6">A6</div>
+                    </div>
+                    <div class="seats text-warning text-center">
+                        <div class="seat" data-seat="B1">B1</div>
+                        <div class="seat" data-seat="B2">B2</div>
+                        <div class="seat" data-seat="B3">B3</div>
+                        <div class="seat" data-seat="B4">B4</div>
+                        <div class="seat" data-seat="B5">B5</div>
+                        <div class="seat" data-seat="B6">B6</div>
+                    </div>
+                    <div class="seats text-warning text-center">
+                        <div class="seat" data-seat="C1">C1</div>
+                        <div class="seat" data-seat="C2">C2</div>
+                        <div class="seat" data-seat="C3">C3</div>
+                        <div class="seat" data-seat="C4">C4</div>
+                        <div class="seat" data-seat="C5">C5</div>
+                        <div class="seat" data-seat="C6">C6</div>
+                    </div>
+                    <div class="seats text-warning text-center">
+                        <div class="seat" data-seat="D1">D1</div>
+                        <div class="seat" data-seat="D2">D2</div>
+                        <div class="seat" data-seat="D3">D3</div>
+                        <div class="seat" data-seat="D4">D4</div>
+                        <div class="seat" data-seat="D5">D5</div>
+                        <div class="seat" data-seat="D6">D6</div>
+                    </div>
+                    <div class="seats text-warning text-center mt-2">
+                        <div class="seat" data-seat="E1">E1</div>
+                        <div class="seat" data-seat="E2">E2</div>
+                        <div class="seat" data-seat="E3">E3</div>
+                        <div class="seat" data-seat="E4">E4</div>
+                        <div class="seat" data-seat="E5">E5</div>
+                        <div class="seat" data-seat="E6">E6</div>
+                        <div class="seat" data-seat="E7">E7</div>
+                        <div class="seat" data-seat="E8">E8</div>
+                        <div class="seat" data-seat="E9">E9</div>
+                        <div class="seat" data-seat="E10">E10</div>
+                    </div>
+                    <div class="seats text-warning text-center">
+                        <div class="seat" data-seat="F1">F1</div>
+                        <div class="seat" data-seat="F2">F2</div>
+                        <div class="seat" data-seat="F3">F3</div>
+                        <div class="seat" data-seat="F4">F4</div>
+                        <div class="seat" data-seat="F5">F5</div>
+                        <div class="seat" data-seat="F6">F6</div>
+                        <div class="seat" data-seat="F7">F7</div>
+                        <div class="seat" data-seat="F8">F8</div>
+                        <div class="seat" data-seat="F9">F9</div>
+                        <div class="seat" data-seat="F10">F10</div>
+                    </div>
+
+                    <div class="process-btn text-center mt-4">
+                        <button class="checkout btn btn-danger fw-semibold" id="checkoutBtn">Proceed to Checkout</button>
                     </div>
                 </div>
             </div>
@@ -108,10 +168,33 @@
       </div>
      </footer>
 
+     <!-- booking confirm toast -->
+     <div class="toast-container position-fixed start-50 top-0 translate-middle-x p-5 mt-5">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+            <i class="fa-solid fa-circle-check fs-4 me-2" style="color: #63E6BE;"></i>
+            <strong>Booking Confirmed </strong>
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select at least one seat -->
+    <div class="toast-container position-fixed start-50 top-0 translate-middle-x p-5 mt-5">
+        <div id="seatSelect" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+            <i class="fa-solid fa-circle-xmark fs-4 me-2" style="color: #d92020;"></i>
+            <strong>Select one seat atleast !! </strong>
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script src="/assets/js/screen.js"></script>
   </body>
 </html>

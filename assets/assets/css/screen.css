@@ -8,3 +8,21 @@
     padding-top: 10rem;
     height: 100vh;
 }
+
+.seat {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      margin: 5px;
+      line-height: 45px;
+      text-align: center;
+      border: 1px solid #ff4d6d;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+     .seat.selected {
+      background: #ff4d6d;
+      color: #fff;
+    }
