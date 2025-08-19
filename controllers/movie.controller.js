@@ -79,3 +79,14 @@ module.exports.updateMovie = async(req,res)=>{
     }
 }
 
+module.exports.showMoviePage = async (req,res)=>{
+    try {
+        const {id} = req.params
+        let movieData = await Movie.findById(id)
+        res.render('pages/movie',{movieData})        
+    } catch (error) {
+        console.log(error)
+        res.render('pages/movie',{movieData:[]})        
+    }
+}
+
