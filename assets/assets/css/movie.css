@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.details{
+    height: 100vh;
+    padding-top: 10rem;
+}
+
+.row{
+
+}
+
+.movie-img img {
+  width: 100%; 
+  height: auto;      
+  border-radius: 10px; 
+}
+
+.col-md-4 .movie-img{
+    max-width: 350px;
+    object-fit: cover;
+}

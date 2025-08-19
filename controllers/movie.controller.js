@@ -86,7 +86,7 @@ module.exports.showMoviePage = async (req,res)=>{
         res.render('pages/movie',{movieData})        
     } catch (error) {
         console.log(error)
-        res.render('pages/movie',{movieData:[]})        
+        res.render('pages/movie',{movieData:{}})        
     }
 }
 
