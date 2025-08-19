@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { viewAddMovie, home, viewListMovie, addMovie, deleteMovie, editMovie, updateMovie, mainPage, showMoviePage } = require('../controllers/movie.controller');
+const { viewAddMovie, home, viewListMovie, addMovie, deleteMovie, editMovie, updateMovie, mainPage, showMoviePage, viewScreen } = require('../controllers/movie.controller');
 const {image} = require('../middleware/image');
 
 const movieRouter = Router();
@@ -21,5 +21,8 @@ movieRouter.post('/update/:id',image,updateMovie)
 
 //Create
 movieRouter.post('/create',image,addMovie);
+
+// Screen 
+movieRouter.get('/screen',viewScreen)
 
 module.exports = movieRouter

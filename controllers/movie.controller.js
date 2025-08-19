@@ -90,3 +90,12 @@ module.exports.showMoviePage = async (req,res)=>{
     }
 }
 
+// Screen
+module.exports.viewScreen = (req,res)=>{
+    try {
+        res.render('pages/screen')
+    } catch (error) {
+        console.log(error)
+    }
+}
+
