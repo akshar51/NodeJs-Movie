@@ -38,3 +38,14 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
+
+    /* off-canvas seat */
+    .bookSeat{
+      font-size: 1vw;
+      width: 35px;
+      height: 35px;
+      border: 1px solid #000;
+      display: flex;               
+      align-items: center;        
+      justify-content: center;
+    }
