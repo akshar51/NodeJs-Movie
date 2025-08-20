@@ -115,11 +115,7 @@ function renderBookings() {
     </div>
   `;
   });
-
-
-  
 }
-
 renderBookings()
 
 // Update price 
