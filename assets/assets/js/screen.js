@@ -36,7 +36,7 @@ checkoutBtn.addEventListener("click", () => {
         seats: [...selectedSeats],  
       };
 
-      // Push to booking history
+      // Push to booking
       bookings.push(booking);
 
       console.log("Bookings:", bookings);
