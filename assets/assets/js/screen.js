@@ -93,7 +93,7 @@ function renderBookings() {
         <div class="d-flex gap-3">
           <img src="/assets/img/tickets-ticket-svgrepo-com.svg" alt="ticket" style="width: 80px; height: 80px;">
           <div class="ticket-detail">
-            <h6>${booking.date}</h6>
+            <h6>${formatDate(booking.date)}</h6>
             <h6>${booking.time}</h6>
             <div class="canvas-seat mt-3 d-flex gap-2 flex-wrap">
               ${booking.seats.map(seat => `
@@ -107,7 +107,7 @@ function renderBookings() {
 
     const grandTotal = bookings.reduce((sum, b) => sum + b.price, 0);
     totalPrice.innerHTML = `
-    <div id="priceFooter" class="offcanvas-footer p-3 bg-dark text-white rounded mb-3">
+    <div id="priceFooter" class="offcanvas-footer p-3 bg-dark text-white rounded mb-3" data-bs-dismiss="offcanvas">
       <a href="#" id="footerBookBtn" class="btn btn-success w-100">Book ticket 
         <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
         ₹ ${grandTotal}
@@ -132,3 +132,10 @@ document.addEventListener("click", (e) => {
     toastBootstrap.show();
   }
 });
+
+// Date format
+function formatDate(dateString) {
+  const date = new Date(dateString); // parse yyyy-mm-dd
+  const options = { day: "numeric", month: "short", year: "numeric" };
+  return date.toLocaleDateString("en-GB", options).replace(/ /g, " ");
+}
