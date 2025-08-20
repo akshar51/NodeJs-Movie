@@ -26,3 +26,15 @@
       background: #ff4d6d;
       color: #fff;
     }
+
+    option{
+      color: white;
+      background-color: rgb(77, 77, 77);
+      
+    }
+
+    .showtime{
+      background: rgba(199, 12, 12, 0.15); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
